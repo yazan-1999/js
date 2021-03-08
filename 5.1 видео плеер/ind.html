@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body{
+      margin-top: 500px;
+      margin-bottom: 1500px;
+    }
+    .overlay{
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      border: 1px solid black;
+    }
+    .overlay video{
+      transform: scale(0.5);
+      /* width: 50%;
+      height: 50%; */
+    }
+
+  </style>
+</head>
+<body>
+  <video controls id="main" >
+    <source src="http://techslides.com/demos/sample-videos/small.webm">
+  </video>
+  <div class="coneiner" id="foo" >
+    <div class="overlay">
+
+    </div>
+  </div>
+  
+<script>
+let v = document.body.firstElementChild
+
+window.addEventListener(`scroll`,onScrooll)
+
+let on = false
+function onScrooll(e){
+  console.log( window.scrollY)
+  let on = false
+
+  if(window.scrollY >= 500 ){
+    on = true
+    swiToOv() //при прокрутке больше чем 500 пикселей выполняй фунцию swiToOv()
+     console.log(on)
+    // console.log( window.scrollY)
+  }
+  else{
+    on = false
+    console.log(on)
+  }
+
+}
+
+
+function swiToOv(){
+  let overlay = document.querySelector(`.overlay`)//найди элемент с классом overlay и вставь его в переменную под названием overlay
+  if (overlay.children.length == 0){
+   //если  количество дочерних елементов ровно 0 то выпоняй код дальше *он выпониться 1 раз потому что при первой проверки  он будет пустым а значит равен 0
+  let main = document.getElementById("main")//найди по айди и вставь в переменную
+  let overVidio = main.cloneNode(true)//скопируй вес узел в скобкох пиеться или true или folse фолс это поверхностно скапировать тру полная копия
+  overVidio.removeAttribute("id")
+  let X = document.createElement("button")
+  X.className ="X"
+  X.innerText ="X"
+  window.addEventListener(X.onclick , removeDiv)
+  X.onclick = removeDiv
+  let coneiner = document.getElementById("1")
+
+  overlay.appendChild(overVidio)
+  overlay.appendChild(X)
+  
+
+  overVidio.muted=v.muted
+  overVidio.volume = v.volume
+  overVidio.currentTime = v.currentTime
+
+
+
+  console.log(overVidio.currentTime)
+
+  }
+
+  
+
+}
+var myNode = document.getElementById("foo");
+    function  removeDiv(){
+    let copvideo = document.querySelector(".overlay").firstElementChild
+    v.muted = copvideo.muted 
+    v.volume = copvideo.volume 
+    v.currentTime = copvideo.currentTime 
+    myNode.innerHTML = '';}
+
+
+
+
+
+    // function removeDiv() {
+    //   let divID1= document.body.childNodes[3]
+    //   divID1.removeChild(this);
+
+// while (myNode.firstChild) {
+//     myNode.removeChild(myNode.firstChild);
+
+
+//функци всеравно не работает каректно
+    
+    // div.onclick = removeDiv;
+  
+  //  if ( X.onclick == true ){
+  //   let div = document.createElement("div")
+  //     document.body.div.removeChild(this)
+  //  }
+  
+  // X.onclick = f
+  // function f (e) { 
+  //     let div = document.createElement("div")
+  //     document.body.div.removeChild(this)
+      
+  //   }
+  
+  // };
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  // let size = document.firstElementChild.style.height
+  // console.log(size)
+
+</script>
+</body>
+</html>

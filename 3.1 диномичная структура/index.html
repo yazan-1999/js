@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    label .oo{
+      display:block;
+    }
+    input{
+      border: 1px solid #777;
+      padding: 10px;
+      outline: none;
+    }
+    input:invalid{
+      border-color: red;
+
+    }
+    button{
+      padding: 10px;
+      width: 170px;
+    }
+  </style>
+</head>
+<body>
+  <form >
+    <label class="oo">
+      <input id="jj" type="text" placeholder="phone namber ..." pattern="	
+      ^[2-9]\d{2}-\d{3}-\d{4}$">
+    </label>
+    <hr/>
+  </form>
+  <button onclick="addField()">+</button>
+
+  <script>
+    let click = 0
+    function addField(){
+    if (click <= 3){// проверка количесто вликов  
+    click += 1// 
+    
+    var plas = document.getElementById("jj")// путь через айди
+    plas.placeholder ="1 phone namber ...";// при выполнее клика начальное соержание плейсхолдора исправиться на "1 phone namber ..."
+
+    let namberPhone = click + 1 // делаем счетчик для пового плейсхолдора
+
+
+    // document.forms[0] - альторнатива
+
+    
+
+    let form = document.querySelector("body>form")
+
+    //   form.innerHTML += `<label>
+    //   <input type="text" placeholder="phone namber ..." pattern="	
+    //   ^[2-9]\d{2}-\d{3}-\d{4}$">
+    // </label>`                               добовляет но перезаписовает всю страницу и теряееться содержимое плейсхолдора 
+    let label = document.createElement("lable") //при нажатии на button  создаеться lable
+    let input = document.createElement("input")// при нажатии на button содаеться input
+        input.setAttribute("type" , "text") //создает атрибуты в inpute
+        input.setAttribute("placeholder" , namberPhone +" phone namber ..." )
+        input.setAttribute ("pattern" , " ^[2-9]\d{2}-\d{3}-\d{4}$")
+
+        label.appendChild(input) //в label вставляеться дочерний лемент input
+        
+        form.appendChild(label)//в form вствляем label
+        // form.appendChild[1](hr)
+      }
+    }
+  </script>
+</body>
+</html>

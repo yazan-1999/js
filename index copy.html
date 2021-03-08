@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<body>
+<script>
+  let table = document.createElement('table');
+for(i = 1 ; i < 10; i++){
+  
+  let row = document.createElement('tr');
+  for(o = 1 ; o < 10; o++){
+  let cell = document.createElement('th','td');
+  let answer = o * i
+  console.table ( o+"x"+[i]+"="+  answer )
+  cell.appendChild(document.createTextNode(answer));
+    row.appendChild(cell);
+}
+table.appendChild(row);
+}
+document.body.appendChild(table);
+</script>
+</body>
+

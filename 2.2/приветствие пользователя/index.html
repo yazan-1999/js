@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1></h1>
+  <input type="text" placeholder="enter yoyr name here ...">
+  <button onclick="send()" > SEND!</button>
+
+  <script>
+    function send(){
+      let name = document.body.children[1].value// поставили в переменную все что в 10 стоке
+      document.body.firstElementChild.innerHTML= "Hello " + name + " !" 
+ //   в докумемнте.боди.первыйЕлементРебенок.перезапиши значение =привет +содержимое в переменой + пробели и "!" 
+      // alert( name)
+    }
+  </script>
+</body>
+</html>

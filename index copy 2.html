@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<body>
+
+  <div class="out"></div>
+
+<script>
+
+let out = document.querySelector(".out")
+
+
+let f = "&emsp;&emsp;";
+
+
+for(let i=0; i<10; i++){
+  if(i%2){
+    out.innerHTML+="<br>"
+  }
+  if(i==2||i==4||i==6){
+  out.innerHTML+=`*${f}*`
+  }
+  if(i==0||i==8){
+    out.innerHTML+="****"
+  }
+}
+
+
+
+</script>
+</body>

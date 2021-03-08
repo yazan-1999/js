@@ -1,0 +1,65 @@
+
+body{
+margin-top:10px;
+height: 1500px;
+}
+
+
+.user-sm img{
+  width: 80px;
+}
+.user-md img{
+  width: 150px;
+}
+.massages{
+  border: 1px solid black ;
+  width: 80px;
+  height: 600px;
+  float: left;
+}
+.profile{
+  border: 1px solid black ;
+  width: 250px;
+  height: 500px;
+  float: right;
+}
+.user-sm{
+  position: relative;
+}
+.offline{
+  width: 15px;
+  height: 15px;
+  border:2px solid rgb(241, 4, 4);
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.online{
+width: 15px;
+height: 15px;
+border:2px solid rgb(4, 241, 36);
+border-radius: 100%;
+position: absolute;
+top: 0;
+left: 0;
+
+
+-webkit-animation: pulsing 2s infinite;
+animation: pulsing 2s infinite;
+}
+
+@keyframes pulsing{
+  0% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5)
+  }
+  50% {
+    -webkit-transform: scale(1.0, 1.0);
+    transform: scale(1.0, 1.0);
+  }
+  100% {
+    -webkit-transform: scale(0.5, 0.5);
+    transform: scale(0.5, 0.5);
+  }
+}

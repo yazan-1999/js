@@ -1,0 +1,21 @@
+.pacman.alive{
+  background-image: url(Chain-Chomp-icon.png);
+}
+.pacman.explouding{
+  background-image: url(Ws1o.gif),
+  url(Chain-Chomp-icon.png);
+  background-size: contain,contain ;
+
+}
+.pacman.Down{
+  transform: rotate(90deg);
+}
+.pacman.Right{
+  transform: rotate(0deg);
+}
+.pacman.Up{
+  transform: rotate(-90deg);
+}
+.pacman.Left{
+  transform: scale(-1,1);
+}

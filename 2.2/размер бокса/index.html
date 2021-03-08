@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="increasee ()">-</button>
+  <button onclick="increase ()">+</button>
+  <div style = "width : 100px; height: 100px; background: green;" >
+  BOX
+  </div>
+
+
+  <script>
+    function increase (){
+      // кинули в переменную 
+      let  div = document.body.children[2]
+      // работа с размерами
+      let size = parseInt( div.style.width) //перевод в численное(зайди в переменную под названием div зайди в style зайди в width "не забываем что значение это в стринге ") parseFloat 
+      size +=10
+      
+      div.style.width = size + "px"
+      div.style.height = size + "px"
+    }
+
+      function increasee (){
+      // кинули в переменную 
+      let  div = document.body.children[2]
+      // работа с размерами
+      let size = parseInt( div.style.width)
+      size -=10
+      
+      div.style.width = size + "px"
+      div.style.height = size + "px"
+
+
+    }
+  </script>
+</body>
+</html>

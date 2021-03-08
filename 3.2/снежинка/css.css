@@ -1,0 +1,48 @@
+body{
+
+  background-image: url(winter.jpg);
+  background-size: cover;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+}
+.flake{
+  animation: windLeft 5s infinite;/* цекличное анемирование в 5 секунд*/
+  position: relative;
+
+}
+.flake>div {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #fff;
+  animation: fall 30s linear ;
+  mix-blend-mode: hard-light ; /* филтр эфекта */
+  
+}
+ 
+
+@keyframes fall{
+  from {top: 0%;}
+  to {top: 100%}
+}
+
+@keyframes fadeOut{
+  from { opacity: 1;}
+  to{opacity:0;}
+}
+
+
+@keyframes windLeft{
+  from{
+    margin-left: 0%;
+  }
+  50%{
+    margin-left: 20%;
+  }
+  to{
+    margin-left: 0%;
+  }
+}

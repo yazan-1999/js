@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .selected{
+      border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+
+
+  <label>   
+      I AGREEN WITH CONDITIONS!!! <input type="checkbox" onclick="check(event)" >
+  </label>
+
+
+
+
+
+    <script>
+       function check (e){
+         console.log( e.target) //выбирает сам себя  <input type="checkbox" onclick="check(event)" >
+         let input = e.target // из свойства делаем переменную (елемент)
+         input.parentElement.className =  "selected"// выходим к родителю и передаем ему класс "selected"
+         setTimeout(() => input.parentElement.className =  "" , 3000); //через 3 секунды обнули класс
+          
+        e.target.parentElement.firstChild.textContent ="I AGREED"
+  //выбери себя.выйди к родителю.первый дочерний елемент.раскрываем текст узла  = "назначаем навй текст" 
+
+       }
+    </script>
+
+   <script src="script.js"></script>
+</body>
+</html>
